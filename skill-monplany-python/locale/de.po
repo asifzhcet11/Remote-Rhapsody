@@ -10,9 +10,64 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: de_DE\n"
 
+##########################################
+##########################################
+##########################################
 
-msgid "HELLOAPP_HELLO"
-msgstr "Hallo, Ich bin MonPlany!"
+
+msgid "MONPLANY_ASK_HOBBIES"
+msgstr "Hallo, was sind Ihre Hobbies?"
+
+msgid "MONPLANY_TELL_HOBBIES"
+msgstr "Sie haben also nur {hobbies} Hobbies."
+
+msgid "MONPLANY_EMPTY_HOBBIES"
+msgstr "Sie haben also keine Hobbies ? Ich werde mir dann welche ausdenken."
+
+msgid "MONPLANY_ASK_SHOPPING"
+msgstr " Ich frage mich auch, wie often gehen Sie wöchentlich einkaufen?"
+
+msgid "MONPLANY_NEGATIVE_SHOPPING_NUMBER"
+msgstr "OK, das kann nicht dein Ernst sein. Ich denke mir eine entsprenchende Antwort aus."
+
+msgid "MONPLANY_NULL_SHOPPING_NUMBER"
+msgstr "Ok, Sie scheinen nicht einkaufen gehen wollen. Das ist aber erforderlich. Ich denke mir eine entsprenchende Antwort aus."
+
+msgid "MONPLANY_BIG_SHOPPING_NUMBER"
+msgstr "Ok, Sie scheinen zu viel einkaufen gehen. Das ist aber nicht möglich. Ich denke mir eine entsprenchende Antwort aus."
+
+msgid "MONPLANY_SHOPPING_NUMBER"
+msgstr "Super, Sie gehen {number} Mal die Woche einkaufen."
+
+msgid "MONPLANY_ASK_GYM"
+msgstr " Noch eine Frage. Gehen Sie zum Fitnessstudio?"
+
+msgid "MONPLANY_GO_GYM"
+msgstr "Hervorragend. Sport ist wichtig für die Gesundheit."
+
+msgid "MONPLANY_NOGO_GYM"
+msgstr "Ok."
+
+msgid "MONPLONY_FINALIZE"
+msgstr " Jetzt habe ich alle Informationen über Sie. Ich werde für Sie einen angepassten Plan herstellen."
+
+msgid "MONPLANY_NEGATIVE_GYM_NUMBER"
+msgstr "Das ist aber unmöglich. Ich werde mir eine entsprechende Antwrot finden."
+
+msgid "MONPLANY_BIG_GYM_NUMBER"
+msgstr "Das ist aber viel zu viel. Ich werde mir eine entsprechende Antwrot finden."
+
+msgid "MONPLANY_GYM_NUMBER"
+msgstr "Sie gehen also {number} Mal die Woche ins Fitnessstudio."
+
+msgid "MONPLANY_ASK_NUMBER_GYM"
+msgstr " Wie viel gehen Sie dann ins Gym?"
+
+
+##########################################
+##########################################
+##########################################
+##########################################
 
 msgid "HELLOAPP_ASK_NAME"
 msgstr "Hi, What's your name"
@@ -20,6 +75,8 @@ msgstr "Hi, What's your name"
 msgid "HELLOAPP_ASK_NAME_RESPONSE"
 msgstr "Hi {name}, Welcome to MonPlany. Please import the calendar"
 
+msgid "HELLOAPP_HELLO"
+msgstr "Hallo ich bin MonPlany"
 
 msgid "HELLOAPP_JOKE"
 msgstr "Ich habe einen Witz für dich! {joke}"
