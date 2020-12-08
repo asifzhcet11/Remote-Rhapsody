@@ -19,7 +19,7 @@ msgid "MONPLANY_ASK_HOBBIES"
 msgstr "Hallo, was sind Ihre Hobbies?"
 
 msgid "MONPLANY_TELL_HOBBIES"
-msgstr "Sie haben also nur {hobbies} Hobbies."
+msgstr "Sie haben also {hobbies} Hobbies."
 
 msgid "MONPLANY_EMPTY_HOBBIES"
 msgstr "Sie haben also keine Hobbies ? Ich werde mir dann welche ausdenken."

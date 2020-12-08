@@ -3,19 +3,20 @@ from skill_sdk.l10n import _
 from typing import List
 import re
 
-@skill.intent_handler('TEAM__21__ASK__HOBBIES')
-def handler() -> Response:
+@skill.intent_handler('TEAM_21_ASK_HOBBIES')
+def ask_hobbies() -> Response:
     msg = _('MONPLANY_ASK_HOBBIES')
-    return tell(msg)
+    return ask(msg)
 
-@skill.intent_handler('TEAM__21__TELL__HOBBIES')
-def handler(hobbies: str) -> Response:
+@skill.intent_handler('TEAM_21_TELL_HOBBIES')
+def tell_hobbies(hobbies: str) -> Response:
     print(hobbies)
     hobbies = re.sub(r'[,|.|und]', '', hobbies)
     hobbies = hobbies.split()
     try:
         assert len(hobbies) > 0
         msg = _('MONPLANY_TELL_HOBBIES', hobbies=len(hobbies))
+        msg += ':'
         for id, str in enumerate(hobbies):
             if id == 0:
                 msg = msg + ' ' + str
@@ -24,13 +25,14 @@ def handler(hobbies: str) -> Response:
             else:
                 msg = msg + ', ' + str
         msg+= '.'
+        print(msg)
         response = ask(msg + _("MONPLANY_ASK_SHOPPING"))
     except(AssertionError, ValueError, TypeError):
         msg = _('MONPLANY_EMPTY_HOBBIES')
         response = tell(msg + _("MONPLANY_ASK_SHOPPING"))
     return response
 
-@skill.intent_handler('TEAM__21__SHOPPING')
+@skill.intent_handler('TEAM_21_SHOPPING')
 def handler(shopping: int) -> Response:
     print(shopping)
     if shopping < 0:
@@ -45,7 +47,7 @@ def handler(shopping: int) -> Response:
     response = tell(msg + _("MONPLANY_ASK_GYM"))
     return response
 
-@skill.intent_handler('TEAM__21__GYM')
+@skill.intent_handler('TEAM_21_GYM')
 def handler(gym: bool) -> Response:
     print(gym)
     if gym :
@@ -56,7 +58,7 @@ def handler(gym: bool) -> Response:
         response = tell(msg + _("MONPLONY_FINALIZE"))
     return response
 
-@skill.intent_handler('TEAM__21__NUMBER__GYM')
+@skill.intent_handler('TEAM_21_NUMBER__GYM')
 def handler(number_gym: int) -> Response:
     print(number_gym)
     if number_gym <= 0:
