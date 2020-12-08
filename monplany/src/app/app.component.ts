@@ -9,8 +9,8 @@ import {startOfDay, endOfDay, subDays, addDays, endOfMonth, isSameDay, isSameMon
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'monplany';
-  view: CalendarView = CalendarView.Week;
+  /*title = 'monplany';
+  view: CalendarView = CalendarView.Month;
   calendarView = CalendarView;
   viewDate: Date = new Date();
   events: CalendarEvent[] = [];
@@ -53,5 +53,5 @@ export class AppComponent {
 
   closeOpenMonthViewDay() {
     this.activeDayIsOpen = false;
-  }
+  }*/
 }

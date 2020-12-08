@@ -1,0 +1,42 @@
+<div class="floated-chat-btn">
+  <i class="os-icon os-icon-mail-07"></i>
+</div>
+<div class="floated-chat-w">
+  <div class="floated-chat-i">
+    <div class="chat-close">
+      <i class="os-icon os-icon-close"></i>
+    </div>
+    <div class="chat-head">
+      <div class="user-w with-status status-green">
+        <div class="user-avatar-w">
+          <div class="user-avatar">
+            <img alt="" src="assets/img/magenta.png">
+          </div>
+        </div>
+        <div class="user-name">
+          <h6 class="user-title">
+            MonPlany
+          </h6>
+          <div class="user-role">
+            Day Planner
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="chat-messages" >
+      <div *ngFor="let message of messages">
+        <div [ngClass]="{'message': (true || false), 'self': message.fromSelf}">
+          <div class="message-content">
+            {{message.text}}
+          </div>
+        </div>
+      </div>
+      <!--<div class="date-break">
+        Mon 10:20am
+      </div>-->
+    </div>
+    <div class="chat-controls">
+      <input class="message-input" placeholder="Type your message here..." type="text">
+    </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="logged-user-w avatar-inline" *ngIf="loggedIn">
+  <div class="logged-user-i">
+    <div class="avatar-w">
+      <img alt="profile" [src]='profilePicture'>
+    </div>
+    <div class="logged-user-info-w">
+      <div class="logged-user-name">
+        {{userName}}
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<button class="btn btn-outline-primary ml-3 mr-3" [disabled]="loggedIn"  (click)='signIn()'>
+  Login
+</button>
+
+<button class="btn btn-outline-primary" (click)='signOut()'>
+  Sign Out
+</button>
