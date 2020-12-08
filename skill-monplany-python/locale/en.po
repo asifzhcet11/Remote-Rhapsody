@@ -10,6 +10,62 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: en_US\n"
 
+#############################################
+##############################################
+##############################################
+
+msgid "MONPLANY_ASK_HOBBIES"
+msgstr "Hello, what are your hobbies?"
+
+msgid "MONPLANY_TELL_HOBBIES"
+msgstr "So you only have {hobbies} hobbies."
+
+msgid "MONPLANY_EMPTY_HOBBIES"
+msgstr "So you have no hobbies ? I will think of some then."
+
+msgid "MONPLANY_ASK_SHOPPING"
+msgstr " I also wonder how often do you go shopping every week?"
+
+msgid "MONPLANY_NEGATIVE_SHOPPING_NUMBER"
+msgstr "Okay, you can't be serious. I'll think of an appropriate response."
+
+msgid "MONPLANY_NULL_SHOPPING_NUMBER"
+msgstr "Ok, you do not seem to want to go shopping. But that is necessary. I'll think of an appropriate response."
+
+msgid "MONPLANY_BIG_SHOPPING_NUMBER"
+msgstr "Okay, you seem to shop too much. But that is not possible. I'll think of an appropriate response."
+
+msgid "MONPLANY_SHOPPING_NUMBER"
+msgstr "Super, you go shopping {number} times a week."
+
+msgid "MONPLANY_ASK_GYM"
+msgstr " One more question. Do you go to the gym?"
+
+msgid "MONPLANY_GO_GYM"
+msgstr "Excellent. Sport is important for health."
+
+msgid "MONPLANY_NOGO_GYM"
+msgstr "Ok."
+
+msgid "MONPLONY_FINALIZE"
+msgstr " Now I have all information about you. I will create a customized plan for you."
+
+msgid "MONPLANY_NEGATIVE_GYM_NUMBER"
+msgstr "But that is impossible. I will find an appropriate answer."
+
+msgid "MONPLANY_BIG_GYM_NUMBER"
+msgstr "But that is much too much. I will find an appropriate answer."
+
+msgid "MONPLANY_GYM_NUMBER"
+msgstr "So you go {number} times a week to the gym."
+
+msgid "MONPLANY_ASK_NUMBER_GYM"
+msgstr " How much do you go to the gym then?"
+
+
+##############################################
+##############################################
+##############################################
 
 msgid "HELLOAPP_HELLO"
 msgstr "Hello, I am MonPlany"

@@ -1,15 +1,18 @@
 from skill_sdk import skill, Response, tell, ask
 from skill_sdk.l10n import _
 from typing import List
+import re
 
-@skill.intent_handler('TEAM__21__HOBBIES')
+@skill.intent_handler('TEAM__21__ASK__HOBBIES')
 def handler() -> Response:
     msg = _('MONPLANY_ASK_HOBBIES')
     return tell(msg)
 
 @skill.intent_handler('TEAM__21__TELL__HOBBIES')
-def handler(hobbies: List[str]) -> Response:
+def handler(hobbies: str) -> Response:
     print(hobbies)
+    hobbies = re.sub(r'[,|.|und]', '', hobbies)
+    hobbies = hobbies.split()
     try:
         assert len(hobbies) > 0
         msg = _('MONPLANY_TELL_HOBBIES', hobbies=len(hobbies))
