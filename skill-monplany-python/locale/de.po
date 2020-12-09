@@ -14,55 +14,53 @@ msgstr ""
 ##########################################
 ##########################################
 
+msgid "MONPLANY_ASK_LOGIN"
+msgstr "Sie sind nicht angemeldet. Bitte zuerst anmelden über unsere Webseite"
+
+msgid "MONPLANY_OK_LOGIN"
+msgstr "Sie sind schon angemeldet. Was soll ich heute für Sie tun?"
+
+msgid "MONPLANY_EVENT_TYPE"
+msgstr "Welche Aktivität möchten Sie dann für heute planen?"
+
+msgid "MONPLANY_AUTOMATIC_EVENT"
+msgstr "Ihr Plan für heute wurde erstellt."
+
+msgid "MONPLANY_NO_PLAN_TODAY"
+msgstr "Ein automatischer Plan für heute ist nicht möglich. bitte erstellen Sie einen personalisierten Plan"
 
 msgid "MONPLANY_ASK_HOBBIES"
 msgstr "Hallo, was sind Ihre Hobbies?"
 
 msgid "MONPLANY_TELL_HOBBIES"
-msgstr "Sie haben also {hobbies} Hobbies."
+msgstr "Sie möchten also {hobbies} Hobbies erstellen. Die Folgenden wurden erfolgreich erfasst"
 
 msgid "MONPLANY_EMPTY_HOBBIES"
-msgstr "Sie haben also keine Hobbies ? Ich werde mir dann welche ausdenken."
+msgstr "Sie haben also keine Hobbies ?"
 
-msgid "MONPLANY_ASK_SHOPPING"
-msgstr " Ich frage mich auch, wie often gehen Sie wöchentlich einkaufen?"
+msgid "MONPLANY_SHOP_EVENT"
+msgstr "Ich werde für Sie ein passendes Plan für Einkaufen erstellen."
 
-msgid "MONPLANY_NEGATIVE_SHOPPING_NUMBER"
-msgstr "OK, das kann nicht dein Ernst sein. Ich denke mir eine entsprenchende Antwort aus."
+msgid "MONPLANY_WATER_REMINDER"
+msgstr "Herrvorragend! Wasser is tsehr wichtig für den Alltag. Ich werde Sie regelmäßig dran erinnern."
 
-msgid "MONPLANY_NULL_SHOPPING_NUMBER"
-msgstr "Ok, Sie scheinen nicht einkaufen gehen wollen. Das ist aber erforderlich. Ich denke mir eine entsprenchende Antwort aus."
+msgid "MONPLANY_GYM_REMINDER"
+msgstr "Wie lange möchten Sie im Fitnessstudio etwa verbrauchen?"
 
-msgid "MONPLANY_BIG_SHOPPING_NUMBER"
-msgstr "Ok, Sie scheinen zu viel einkaufen gehen. Das ist aber nicht möglich. Ich denke mir eine entsprenchende Antwort aus."
+msgid "MONPLANY_GYM_OK"
+msgstr "Ok. Ich habe für Sie einen Plan für Ihren Fitnessgym erstellt."
 
-msgid "MONPLANY_SHOPPING_NUMBER"
-msgstr "Super, Sie gehen {number} Mal die Woche einkaufen."
+msgid "MONPLANY_GYM_IMPOSSIBLE"
+msgstr "Für diese Dauer kann ich leider für heute Das Fitnesstraining nicht einplanen."
 
-msgid "MONPLANY_ASK_GYM"
-msgstr " Noch eine Frage. Gehen Sie zum Fitnessstudio?"
+msgid "MONPLANY_WRONG_TIME"
+msgstr "Bitte geben Sie korrekte Zeiten zum Bearbeiten"
 
-msgid "MONPLANY_GO_GYM"
-msgstr "Hervorragend. Sport ist wichtig für die Gesundheit."
+msgid "MONPLANY_ACTIVITY_NOT_FOUND"
+msgstr "Tut mir Leid. Wir haben noch nicht diese Funktionalität implementiert. Bitte wählen Sie zwischen einkaufen, Wasser erinnerung oder Gym Aktivitäten"
 
-msgid "MONPLANY_NOGO_GYM"
-msgstr "Ok."
-
-msgid "MONPLONY_FINALIZE"
-msgstr " Jetzt habe ich alle Informationen über Sie. Ich werde für Sie einen angepassten Plan herstellen."
-
-msgid "MONPLANY_NEGATIVE_GYM_NUMBER"
-msgstr "Das ist aber unmöglich. Ich werde mir eine entsprechende Antwrot finden."
-
-msgid "MONPLANY_BIG_GYM_NUMBER"
-msgstr "Das ist aber viel zu viel. Ich werde mir eine entsprechende Antwrot finden."
-
-msgid "MONPLANY_GYM_NUMBER"
-msgstr "Sie gehen also {number} Mal die Woche ins Fitnessstudio."
-
-msgid "MONPLANY_ASK_NUMBER_GYM"
-msgstr " Wie viel gehen Sie dann ins Gym?"
-
+msgid "MONPLANY_FINAl_MSG"
+msgstr " Melden Sie sich wenn Sie etwas brauchen! Schönen Tag noch."
 
 ##########################################
 ##########################################

@@ -14,6 +14,15 @@ msgstr ""
 ##############################################
 ##############################################
 
+msgid "MONPLANY_ASK_LOGIN"
+msgstr "You are not logged in. Please register first via our website"
+
+msgid "MONPLANY_OK_LOGIN"
+msgstr "You are already registered. What should I do for you today?"
+
+msgid "MONPLANY_EVENT_TYPE"
+msgstr "Which activity would you like to plan for today?"
+
 msgid "MONPLANY_ASK_HOBBIES"
 msgstr "Hello, what are your hobbies?"
 
