@@ -15,6 +15,7 @@ class UserDatabase:
         self.magenta_info_collection = self.db[UserDatabase.MAGENTA_COLLECTION]
 
     def insert_sync_info(self, magenta_id: str, to: str) -> str:
+        print("here")
         query = {"magenta_id": magenta_id}
         res = self.magenta_info_collection.find_one(query)
         if res:
@@ -26,6 +27,8 @@ class UserDatabase:
 
         else:
             sync_code = self.magenta_synchronizer.generate_sync_code()
+
+            print(sync_code)
             self.magenta_synchronizer.send_code(code=sync_code, to=to)
 
             # inserting to db
@@ -57,8 +60,13 @@ class UserDatabase:
         res = self.user_collection.find_one(query)
         return res["events"]
 
-    def update_calendar_events(self, email: str, events: []):
+    def update_calendar_events_by_email(self, email: str, events: []):
         query = {"email": email}
+        new_events = {"$set": {"events": events}}
+        self.user_collection.update_one(query, new_events)
+
+    def update_calendar_events_by_magenta_id(self, magenta_id: str, events: []):
+        query = {"magenta_id": magenta_id}
         new_events = {"$set": {"events": events}}
         self.user_collection.update_one(query, new_events)
 
@@ -79,11 +87,12 @@ class UserDatabase:
 #### TEST #####
 ###############
 
-if __name__ == "__main__":
-    print("wghy")
-    user_database = UserDatabase()
-    magenta_id = "jqyfJusKzSPgjt3egObvCHgLs3I6HaUIgF4R89G5lmE="
-    user_database.insert_sync_info(magenta_id, to="+4915175834426")
+# if __name__ == "__main__":
+#     print("wghy")
+#     user_database = UserDatabase()
+#     #magenta_id = "jqyfJusKzSPgjt3egObvCHgLs3I6HaUIgF4R89G5lmE="
+#     #user_database.insert_sync_info(magenta_id, to="+4915175834426")
+#     user_database.insert_user_info(email="asifzhcet11@gmail.com", first_name="Mohammad", last_name="Asif", events=[], google_auth_code="112", sync_code=82009)
     # user_database.print_collection(user_database.magenta_info_collection)
     #
     #

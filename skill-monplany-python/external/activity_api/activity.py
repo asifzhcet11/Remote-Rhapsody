@@ -74,7 +74,8 @@ class ActivityManager:
             activity = self.available_activities[activity_type]
         else:
             activity = self.available_activities[activity_type]
-            activity.preferred_duration = duration
+            if not duration==0:
+                activity.preferred_duration = duration
 
         # TODO add to mongodb
         # TODO add to calendar
