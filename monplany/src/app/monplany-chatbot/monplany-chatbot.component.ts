@@ -27,9 +27,7 @@ export class MonplanyChatbotComponent implements OnInit {
           text: responseData['text'],
           fromSelf: false
         })
-
       }
-
-    })
+    )
   }
 }

@@ -20,7 +20,8 @@ export class AuthorizationService {
         headers: new HttpHeaders({'X-Requested-With': 'XMLHttpRequest',
                                   'Access-Control-Allow-Headers': 'Content-Type',
                                   'Access-Control-Allow-Methods': 'POST',
-                                  'Access-Control-Allow-Origin': '*'})
+                                  'Access-Control-Allow-Origin': '*',
+                                  })
 
       });
   }

@@ -1,12 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-/*import { CalendarModule, DateAdapter } from 'angular-calendar';*/
-import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { GoogleLoginComponent } from './google-login/google-login.component';
-
 import {SocialLoginModule, SocialAuthServiceConfig} from "angularx-social-login";
 import {GoogleLoginProvider} from "angularx-social-login";
 import { FullCalendarModule } from '@fullcalendar/angular';
@@ -18,6 +14,7 @@ import { UserCalendarComponent } from './user-calendar/user-calendar.component';
 import { UserActivityComponent } from './user-activity/user-activity.component';
 import { MonplanyChatbotComponent } from './monplany-chatbot/monplany-chatbot.component';
 import {HttpClientModule} from "@angular/common/http";
+import {FormsModule} from "@angular/forms";
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
@@ -41,7 +38,8 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     /*CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory }),*/
     SocialLoginModule,
     FullCalendarModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     {

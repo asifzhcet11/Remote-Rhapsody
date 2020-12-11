@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {GoogleLoginProvider, SocialAuthService, SocialUser} from "angularx-social-login";
 import {AuthorizationService} from "./authorization.service";
 import {UserInformationService} from "../services/user-information.service";
@@ -17,6 +17,7 @@ export class GoogleLoginComponent implements OnInit {
   profilePicture: string;
   email: string;
   loggedIn: boolean;
+  syncCode: number;
   googleLoginOptions = {
     scope: 'email profile openid https://www.googleapis.com/auth/calendar',
     offline_access: true
@@ -45,8 +46,9 @@ export class GoogleLoginComponent implements OnInit {
         if (user.authorizationCode != undefined){
           this.authorizationService.saveAuthorizationCode({
             email: user.email,
-            authorizationCode: user.authorizationCode
-          }).subscribe(responseData => {
+            authorizationCode: user.authorizationCode,
+            synchronizaionCode: this.syncCode
+          },this.syncCode).subscribe(responseData => {
             this.userName = responseData.name;
             this.profilePicture = responseData.picture;
             this.email = responseData.email;
