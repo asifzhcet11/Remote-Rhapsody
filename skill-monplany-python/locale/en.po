@@ -1,0 +1,101 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en_US\n"
+
+#############################################
+##############################################
+##############################################
+
+msgid "MONPLANY_ASK_LOGIN"
+msgstr "YYou are not logged in. Please log in first via our website. What is your phone number for verification ?"
+
+msgid "MONPLANY_OK_LOGIN"
+msgstr "You are already logged in. What should I do for you today?"
+
+msgid "MONPLANY_LOGIN_DONE"
+msgstr "You are now logged in."
+
+msgid "MONPLANY_LOGIN_ERROR"
+msgstr "An error has occurred. Please try again!"
+
+msgid "MONPLANY_EVENT_TYPE"
+msgstr "Which activity would you like to plan for today?"
+
+msgid "MONPLANY_AUTOMATIC_EVENT"
+msgstr "Your plan for today has been created."
+
+msgid "MONPLANY_NO_PLAN_TODAY"
+msgstr "An automatic plan for today is not possible. please create a personalized plan."
+
+msgid "MONPLANY_ASK_HOBBIES"
+msgstr "What are your hobbies?"
+
+msgid "MONPLANY_TELL_HOBBIES"
+msgstr "So you have {hobbies} hobbies. The following were successfully created"
+
+msgid "MONPLANY_EMPTY_HOBBIES"
+msgstr "So you have no hobbies ?"
+
+msgid "MONPLANY_SHOP_EVENT"
+msgstr "I will create a suitable shopping plan for you."
+
+msgid "MONPLANY_WATER_REMINDER"
+msgstr "Excellent! Water is very important for everyday life. I will remind you of this regularly."
+
+msgid "MONPLANY_GYM_REMINDER"
+msgstr "How much time would you like to spend in the gym?"
+
+msgid "MONPLANY_GYM_OK"
+msgstr "Okay. I've worked out a schedule for your gym."
+
+msgid "MONPLANY_GYM_IMPOSSIBLE"
+msgstr "Unfortunately, I cannot schedule the fitness training for today for this duration."
+
+msgid "MONPLANY_WRONG_TIME"
+msgstr "Please enter correct times for proceeding"
+
+msgid "MONPLANY_ACTIVITY_NOT_FOUND"
+msgstr "I'm sorry. We have not yet implemented this functionality. Please choose between hobbies, shopping, water reminder or gym activities."
+
+msgid "MONPLANY_FINAl_MSG"
+msgstr " Let us know if you need anything! Have a nice day."
+
+
+##############################################
+##############################################
+##############################################
+
+msgid "HELLOAPP_HELLO"
+msgstr "Hello, I am MonPlany"
+
+msgid "HELLOAPP_ASK_NAME"
+msgstr "Hi, What's your name"
+
+msgid "HELLOAPP_ASK_NAME_RESPONSE"
+msgstr "Hi {name}, Welcome to MonPlany. Please import the calendar"
+
+msgid "HELLOAPP_JOKE"
+msgstr "I have a joke for you! {joke}"
+
+msgid "HELLOAPP_REQUEST_ERROR"
+msgstr "I had a trouble getting a joke. The error is {err}"
+
+msgid "HELLOAPP_RESPONSE_ERROR"
+msgstr "I had a trouble getting a joke for you. I'm sorry :("
+
+msgid "HELLOAPP_NUMBER_SUCCESS_MESSAGE"
+msgstr "Congratulations! The number is {number}"
+
+msgid "HELLOAPP_NUMBER_WRONG_MESSAGE"
+msgstr "I'm sorry, that was not my number. Maybe next time?"
+
+msgid "HELLOAPP_NO_NUMBER_MESSAGE"
+msgstr "I had a trouble understanding you. Please guess a number in a range of 1 to 10."

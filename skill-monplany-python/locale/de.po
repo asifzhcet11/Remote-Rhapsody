@@ -1,0 +1,94 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: de_DE\n"
+
+##################LOGIN##################
+##########################################
+##########################################
+##########################################
+
+
+msgid "MONPLANY_ASK_LOGIN"
+msgstr "Sie sind nicht angemeldet. Bitte zuerst über unsere Webseite anmelden. Wie haben Ihnen ein Code zugeschickt. Bitte den Code auf unsere Webseite eingeben"
+
+msgid "MONPLANY_OK_LOGIN"
+msgstr "Sie sind schon angemeldet. Was soll ich heute für Sie tun?"
+
+msgid "MONPLANY_LOGIN_DONE"
+msgstr "Sie sind jetzt angemeldet."
+
+msgid "MONPLANY_LOGIN_ERROR"
+msgstr "Ein Fehler ist aufgetreten. Bitte versuchen Sie es nochmal!"
+
+#################EVENTS##################
+##########################################
+
+msgid "MONPLANY_EVENT_TYPE"
+msgstr "Welche Aktivität möchten Sie dann für heute planen?"
+
+msgid "MONPLANY_AUTOMATIC_EVENT"
+msgstr "Ihr Plan für heute wurde erstellt."
+
+msgid "MONPLANY_NO_PLAN_TODAY"
+msgstr "Ein automatischer Plan für heute ist nicht möglich. bitte erstellen Sie einen personalisierten Plan"
+
+################HOBBIES##################
+##########################################
+
+msgid "MONPLANY_ASK_HOBBIES"
+msgstr "Was sind Ihre Hobbies dann?"
+
+msgid "MONPLANY_TELL_HOBBIES"
+msgstr "Sie möchten also {hobbies} Hobbies erstellen. Die Folgenden wurden erfolgreich erfasst"
+
+msgid "MONPLANY_EMPTY_HOBBIES"
+msgstr "Sie haben also keine Hobbies ?"
+
+###############SHOp##################
+##########################################
+
+msgid "MONPLANY_SHOP_EVENT"
+msgstr "Ich werde für Sie ein passendes Plan für Einkaufen erstellen."
+
+##############WATER################
+##########################################
+
+msgid "MONPLANY_WATER_REMINDER"
+msgstr "Herrvorragend! Wasser is tsehr wichtig für den Alltag. Ich werde Sie regelmäßig dran erinnern."
+
+################GYM#####################
+##########################################
+
+msgid "MONPLANY_GYM_REMINDER"
+msgstr "Wie lange möchten Sie im Fitnessstudio etwa verbrauchen?"
+
+msgid "MONPLANY_GYM_OK"
+msgstr "Ok. Ich habe für Sie einen Plan für Ihren Fitnessgym erstellt."
+
+msgid "MONPLANY_GYM_IMPOSSIBLE"
+msgstr "Für diese Dauer kann ich leider für heute Das Fitnesstraining nicht einplanen."
+
+msgid "MONPLANY_WRONG_TIME"
+msgstr "Bitte geben Sie korrekte Zeiten zum Bearbeiten"
+
+#############Other#####################
+##########################################
+
+msgid "MONPLANY_ACTIVITY_NOT_FOUND"
+msgstr "Tut mir Leid. Wir haben noch nicht diese Funktionalität implementiert. Bitte wählen Sie zwischen Hobbies, Einkaufen, Wasser Erinnerung oder Gym Aktivitäten."
+
+msgid "MONPLANY_FINAl_MSG"
+msgstr " Melden Sie sich wenn Sie etwas brauchen! Schönen Tag noch."
+
+##########################################
+##########################################
+##########################################
+##########################################
