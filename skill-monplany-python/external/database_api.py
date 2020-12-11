@@ -14,8 +14,7 @@ class UserDatabase:
         self.user_collection = self.db[UserDatabase.COLLECTION]
         self.magenta_info_collection = self.db[UserDatabase.MAGENTA_COLLECTION]
 
-    def insert_sync_info(self, magenta_id: str, to: str) -> str:
-        print("here")
+    def insert_sync_info(self, magenta_id: str) -> str:
         query = {"magenta_id": magenta_id}
         res = self.magenta_info_collection.find_one(query)
         if res:
@@ -23,17 +22,17 @@ class UserDatabase:
             #     return "Your id is already synced with {}".format(res["email"])
             # else:
             #     return "Please sync your id with your email"
-            return "Sync is in progress. Please wait."
+            return res["sync_code"]
 
         else:
             sync_code = self.magenta_synchronizer.generate_sync_code()
 
             print(sync_code)
-            self.magenta_synchronizer.send_code(code=sync_code, to=to)
+            # self.magenta_synchronizer.send_code(code=sync_code, to=to)
 
             # inserting to db
             self.magenta_info_collection.insert_one({"sync_code": sync_code, "magenta_id": magenta_id})
-            return "Your code {}, is also sent to your number. Please sync on our web application".format(sync_code)
+            return sync_code
 
     def insert_user_info(self, email: str, first_name: str, last_name: str, events: [], google_auth_code: str, sync_code: int):
         query = {"sync_code": sync_code}

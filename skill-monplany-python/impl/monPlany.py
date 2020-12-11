@@ -9,23 +9,40 @@ activity_manager = ActivityManager()
 user_database = UserDatabase()
 available_events = ["einkaufen", "fitness", "gym", "wasser", "hobby", "kaufe"]
 event_map_activity = {
-    "einkaufen": { "type": ActivityType.EINKAUFEN,
-                   "response": _("MONPLANY_SHOP_EVENT") + _("MONPLANY_FINAl_MSG")},
+    "einkaufen": {
+        "type": ActivityType.EINKAUFEN,
+        "response": _("MONPLANY_SHOP_EVENT") + _("MONPLANY_FINAl_MSG")
+    },
     "kaufe": {
        "type": ActivityType.EINKAUFEN,
        "response": "MONPLANY_SHOP_EVENT"
     },
-    "fitness": ActivityType.GYM,
-    "gym": ActivityType.GYM,
-    "hobby": ActivityType.HOBBIES
+    "fitness": {
+        "type": ActivityType.GYM,
+        "response": "MONPLANY_GYM_EVENT"
+    },
+    "gym": {
+        "type": ActivityType.GYM,
+        "response": "MONPLANY_GYM_EVENT"
+    },
+    "hobby": {
+        "type":ActivityType.HOBBIES,
+         "response": "MONPLANY_ASK_HOBBIES"
+    },
+    "wasser":{
+        "type": ActivityType.GESUNDHEIT,
+        "response": "MONPLANY_WATER_EVENT"
+    }
 }
 @skill.intent_handler('TEAM_21_CREATE_EVENT')
 def ask_login(user_id:str, phone:str) -> Response:
-    phone = '+4915175834426'
     if not user_database.is_user_synced(user_id):
-        response = tell(_('MONPLANY_ASK_LOGIN'))
-        print(phone)
-        user_database.insert_sync_info(user_id,phone)
+        code = user_database.insert_sync_info(user_id)
+        code_text = str(code)
+        user_code = ""
+        for i in code_text:
+            user_code += i + '.'
+        response = tell(_('MONPLANY_ASK_LOGIN', code=user_code))
     else:
         response = tell(_('MONPLANY_EVENT_TYPE'))
     return response

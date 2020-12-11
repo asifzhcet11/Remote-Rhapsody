@@ -19,7 +19,7 @@ class MagentaSyncronization:
     def is_user_available(self):
         pass
 
-    def generate_sync_code(self, n=5):
+    def generate_sync_code(self, n=4):
         range_start = 10 ** (n - 1)
         range_end = (10 ** n) - 1
         return randint(range_start, range_end)
