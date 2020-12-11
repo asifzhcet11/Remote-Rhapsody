@@ -48,7 +48,7 @@ export class GoogleLoginComponent implements OnInit {
             email: user.email,
             authorizationCode: user.authorizationCode,
             synchronizaionCode: this.syncCode
-          },this.syncCode).subscribe(responseData => {
+          }).subscribe(responseData => {
             this.userName = responseData.name;
             this.profilePicture = responseData.picture;
             this.email = responseData.email;
