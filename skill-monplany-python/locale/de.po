@@ -17,7 +17,7 @@ msgstr ""
 
 
 msgid "MONPLANY_ASK_LOGIN"
-msgstr "Sie sind nicht angemeldet. Bitte zuerst über unsere Webseite anmelden und den Code auf unsere Webseite eingeben. Ihr Code lautet.: {code}"
+msgstr "Sie sind nicht angemeldet. Bitte zuerst über unsere Webseite anmelden und den 4 stelligen Code eingeben. Ihr Code lautet.: {code}"
 
 msgid "MONPLANY_OK_LOGIN"
 msgstr "Sie sind schon angemeldet. Was soll ich heute für Sie tun?"

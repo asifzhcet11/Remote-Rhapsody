@@ -11,7 +11,7 @@ available_events = ["einkaufen", "fitness", "gym", "wasser", "hobby", "kaufe", "
 event_map_activity = {
     "einkaufen": {
         "type": ActivityType.EINKAUFEN,
-        "response": _("MONPLANY_SHOP_EVENT") + _("MONPLANY_FINAl_MSG")
+        "response": _("MONPLANY_SHOP_EVENT")
     },
     "kaufe": {
        "type": ActivityType.EINKAUFEN,
@@ -53,7 +53,7 @@ def ask_login(user_id:str, phone:str) -> Response:
     if not user_database.is_user_synced(user_id):
         response = generate_code_response(user_id)
     else:
-        response = tell(_('MONPLANY_EVENT_TYPE'))
+        response = ask(_('MONPLANY_EVENT_TYPE'))
     return response
 
 @skill.intent_handler('TEAM_21_CREATE_AUTOMATIC_EVENT')
@@ -74,7 +74,7 @@ def automatic_event(user_id:str) -> Response:
 @skill.intent_handler('TEAM_21_ASK_HOBBIES')
 def ask_hobbies(user_id:str) -> Response:
     if user_database.is_user_synced(user_id):
-        response = tell(_('MONPLANY_ASK_HOBBIES'))
+        response = ask(_('MONPLANY_ASK_HOBBIES'))
     else:
         response = generate_code_response(user_id)
     return response
@@ -83,7 +83,7 @@ def ask_hobbies(user_id:str) -> Response:
 def plan_hobbies(user_id:str, hobbies: str) -> Response:
     print(hobbies)
     if user_database.is_user_synced(user_id):
-        hobbies = re.sub(r'[,|.|und]', '', hobbies)
+        hobbies = re.sub(r'[,.]|und', '', hobbies)
         hobbies = hobbies.split()
         print(hobbies)
         try:
@@ -116,7 +116,10 @@ def plan_event(user_id:str, activity: str) -> Response:
         lowercase = activity.lower()
         if lowercase in available_events:
             type = event_map_activity[lowercase]["type"]
-            response = tell(_(event_map_activity[lowercase]["response"]))
+            if type == ActivityType.GYM:
+                response = ask(_(event_map_activity[lowercase]["response"]))
+            else:
+                response = tell(_(event_map_activity[lowercase]["response"]) + _("MONPLANY_FINAl_MSG"))
             user_activity = activity_manager.create_activity(type)
             # if event.lower() == "einkaufen":
             #     response = tell()
@@ -128,13 +131,13 @@ def plan_event(user_id:str, activity: str) -> Response:
             # else:
             #     response = ask("MONPLANY_GYM_REMINDER")
         else:
-            response = tell("MONPLANY_ACTIVITY_NOT_FOUND")
+            response = ask("MONPLANY_ACTIVITY_NOT_FOUND")
     else:
         response = generate_code_response(user_id)
     return response
 
 @skill.intent_handler('TEAM_21_GYM')
-def gym_event(user_id:str, hours:int=0, minutes:int=0) -> Response:
+def gym_event(user_id:str, hours:int, minutes:int) -> Response:
 
     print(hours, ' hours + ', minutes, " minutes.")
     try:
