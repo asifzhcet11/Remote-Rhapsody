@@ -7,7 +7,7 @@ import re
 
 activity_manager = ActivityManager()
 user_database = UserDatabase()
-available_events = ["einkaufen", "fitness", "gym", "wasser", "hobby", "kaufe"]
+available_events = ["einkaufen", "fitness", "gym", "wasser", "hobby", "kaufe", "sport"]
 event_map_activity = {
     "einkaufen": {
         "type": ActivityType.EINKAUFEN,
@@ -22,6 +22,10 @@ event_map_activity = {
         "response": "MONPLANY_GYM_EVENT"
     },
     "gym": {
+        "type": ActivityType.GYM,
+        "response": "MONPLANY_GYM_EVENT"
+    },
+    "sport": {
         "type": ActivityType.GYM,
         "response": "MONPLANY_GYM_EVENT"
     },
@@ -58,7 +62,7 @@ def automatic_event(user_id:str) -> Response:
     #       msg = _('MONPLANY_NO_PLAN_TODAY')
     else:
         msg = _('MONPLANY_ASK_LOGIN')
-        user_database.insert_sync_info(user_id,"")
+        user_database.insert_sync_info(user_id)
     return tell(msg)
     pass
 
@@ -66,18 +70,19 @@ def automatic_event(user_id:str) -> Response:
 @skill.intent_handler('TEAM_21_ASK_HOBBIES')
 def ask_hobbies(user_id:str) -> Response:
     if user_database.is_user_synced(user_id):
-        response = ask(_('MONPLANY_ASK_HOBBIES'))
+        response = tell(_('MONPLANY_ASK_HOBBIES'))
     else:
         response = tell(_('MONPLANY_ASK_LOGIN'))
-        user_database.insert_sync_info(user_id,"")
+        user_database.insert_sync_info(user_id)
     return response
 
 @skill.intent_handler('TEAM_21_TELL_HOBBIES')
 def plan_hobbies(user_id:str, hobbies: str) -> Response:
     print(hobbies)
     if user_database.is_user_synced(user_id):
-        hobbies = re.sub(r'(,|.|und)', '', hobbies)
+        hobbies = re.sub(r'[,|.|und]', '', hobbies)
         hobbies = hobbies.split()
+        print(hobbies)
         try:
             assert len(hobbies) > 0
             msg = _('MONPLANY_TELL_HOBBIES', hobbies=len(hobbies))
@@ -91,13 +96,13 @@ def plan_hobbies(user_id:str, hobbies: str) -> Response:
                     msg = msg + ', ' + str
             msg+= '.'
             print(msg)
-            response = ask(msg + _("MONPLANY_FINAl_MSG"))
+            response = tell(msg + _("MONPLANY_FINAl_MSG"))
             # send_event("Hobby",hobbies)
         except(AssertionError, ValueError, TypeError):
-            response = ask(_('MONPLANY_EMPTY_HOBBIES'))
+            response = tell(_('MONPLANY_EMPTY_HOBBIES'))
     else:
       response = tell(_('MONPLANY_ASK_LOGIN'))
-      user_database.insert_sync_info(user_id, "")
+      user_database.insert_sync_info(user_id)
 
     return response
 
@@ -124,7 +129,7 @@ def plan_event(user_id:str, activity: str) -> Response:
             response = tell("MONPLANY_ACTIVITY_NOT_FOUND")
     else:
         response = tell(_('MONPLANY_ASK_LOGIN'))
-        user_database.insert_sync_info(user_id, "")
+        user_database.insert_sync_info(user_id)
     return response
 
 @skill.intent_handler('TEAM_21_GYM')
@@ -141,7 +146,7 @@ def gym_event(user_id:str, hours:int=0, minutes:int=0) -> Response:
             #   response = tell(_("MONPLANY_GYM_IMPOSSIBLE"))
         else:
             response = tell(_('MONPLANY_ASK_LOGIN'))
-            user_database.insert_sync_info(user_id, "")
+            user_database.insert_sync_info(user_id)
     except(AssertionError):
-        response = ask("MONPLANY_WRONG_TIME")
+        response = tell("MONPLANY_WRONG_TIME")
     return response

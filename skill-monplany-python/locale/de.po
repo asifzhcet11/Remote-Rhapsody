@@ -17,7 +17,7 @@ msgstr ""
 
 
 msgid "MONPLANY_ASK_LOGIN"
-msgstr "Sie sind nicht angemeldet. Bitte zuerst über unsere Webseite anmelden. Wie haben Ihnen ein Code zugeschickt. Bitte den Code auf unsere Webseite eingeben"
+msgstr "Sie sind nicht angemeldet. Bitte zuerst über unsere Webseite anmelden und den Code auf unsere Webseite eingeben. Ihr Code lautet.: {code}"
 
 msgid "MONPLANY_OK_LOGIN"
 msgstr "Sie sind schon angemeldet. Was soll ich heute für Sie tun?"
@@ -61,13 +61,13 @@ msgstr "Ich werde für Sie ein passendes Plan für Einkaufen erstellen."
 ##############WATER################
 ##########################################
 
-msgid "MONPLANY_WATER_REMINDER"
+msgid "MONPLANY_WATER_EVENT"
 msgstr "Herrvorragend! Wasser is tsehr wichtig für den Alltag. Ich werde Sie regelmäßig dran erinnern."
 
 ################GYM#####################
 ##########################################
 
-msgid "MONPLANY_GYM_REMINDER"
+msgid "MONPLANY_GYM_EVENT"
 msgstr "Wie lange möchten Sie im Fitnessstudio etwa verbrauchen?"
 
 msgid "MONPLANY_GYM_OK"
