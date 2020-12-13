@@ -35,7 +35,7 @@ msgid "MONPLANY_EVENT_TYPE"
 msgstr "Welche Aktivität möchten Sie dann planen, {first_name}?"
 
 msgid "MONPLANY_AUTOMATIC_EVENT"
-msgstr "{first_name}, Ihr Plan wurde erstellt."
+msgstr "Ihr Plan wurde erstellt."
 
 msgid "MONPLANY_NO_PLAN_TODAY"
 msgstr "{first_name}, Ein automatischer Plan für heute ist nicht möglich. bitte erstellen Sie einen personalisierten Plan"
@@ -62,7 +62,7 @@ msgstr "Ich werde für Sie ein passendes Plan für Einkaufen erstellen."
 ##########################################
 
 msgid "MONPLANY_WATER_EVENT"
-msgstr "Herrvorragend! {first_name}, Wasser is tsehr wichtig für den Alltag. Ich werde Sie regelmäßig dran erinnern."
+msgstr "Herrvorragend! Wasser is tsehr wichtig für den Alltag. Ich werde Sie regelmäßig dran erinnern."
 
 ################GYM#####################
 ##########################################
@@ -83,10 +83,10 @@ msgstr "{first_name}, Bitte geben Sie korrekte Zeiten zum Bearbeiten"
 ##########################################
 
 msgid "MONPLANY_ACTIVITY_NOT_FOUND"
-msgstr "{first_name}, Tut mir Leid. Wir haben noch nicht diese Funktionalität implementiert. Bitte wählen Sie zwischen Hobbies, Einkaufen, Wasser Erinnerung oder Gym Aktivitäten."
+msgstr "Tut mir Leid. Wir haben noch nicht diese Funktionalität implementiert. Bitte wählen Sie zwischen Hobbies, Einkaufen, Wasser Erinnerung oder Gym Aktivitäten."
 
 msgid "MONPLANY_FINAl_MSG"
-msgstr "Melden Sie sich wenn Sie etwas brauchen! Schönen Tag noch."
+msgstr " Melden Sie sich wenn Sie etwas brauchen! Schönen Tag noch!"
 
 ##########################################
 ##########################################
