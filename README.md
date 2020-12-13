@@ -37,18 +37,3 @@ ng serve
 ```bash
 python skill-monplany-python/manager.py run
 ```
-
-
-## How to use
-
-```mermaid
-graph LR
-A[''Plan Erstellen''] --> B(''Ich möchte einkaufen gehen'')
-A --> C(''Ich möchte zum Gym gehen'')
-A --> E(''Automatisch erstellen'')
-A --> F(''Hobby planen'')
-B --> D{Activity is planned in the calendar}
-C --> D
-E --> D
-F --> D
-```
