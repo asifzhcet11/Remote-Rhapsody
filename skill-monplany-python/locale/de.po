@@ -44,13 +44,13 @@ msgstr "{first_name}, Ein automatischer Plan für heute ist nicht möglich. bitt
 ##########################################
 
 msgid "MONPLANY_ASK_HOBBIES"
-msgstr "{first_name}, Was sind Ihre Hobbies dann?"
+msgstr "Was sind Ihre Hobbies dann?"
 
 msgid "MONPLANY_TELL_HOBBIES"
-msgstr "{first_name}, Sie möchten also {hobbies} Hobbies erstellen. Die Folgenden wurden erfolgreich erfasst"
+msgstr "Sie möchten also {hobbies} Hobbies erstellen. Die Folgenden wurden erfolgreich erfasst"
 
 msgid "MONPLANY_EMPTY_HOBBIES"
-msgstr "{first_name}, Sie haben also keine Hobbies ?"
+msgstr "Sie haben also keine Hobbies ?"
 
 ###############SHOp##################
 ##########################################
@@ -68,16 +68,16 @@ msgstr "Herrvorragend! Wasser is tsehr wichtig für den Alltag. Ich werde Sie re
 ##########################################
 
 msgid "MONPLANY_GYM_EVENT"
-msgstr "{first_name}, Wie lange möchten Sie im Fitnessstudio etwa verbrauchen?"
+msgstr "Wie lange möchten Sie im Fitnessstudio etwa verbrauchen?"
 
 msgid "MONPLANY_GYM_OK"
-msgstr "{first_name}, Ok. Ich habe für Sie einen Plan für Ihren Fitnessgym erstellt."
+msgstr "Ok. Ich habe für Sie einen Plan für Ihren Fitnessgym erstellt."
 
 msgid "MONPLANY_GYM_IMPOSSIBLE"
-msgstr "{first_name}, Für diese Dauer kann ich leider für heute Das Fitnesstraining nicht einplanen."
+msgstr "Für diese Dauer kann ich leider für heute Das Fitnesstraining nicht einplanen."
 
 msgid "MONPLANY_WRONG_TIME"
-msgstr "{first_name}, Bitte geben Sie korrekte Zeiten zum Bearbeiten"
+msgstr "Bitte geben Sie korrekte Zeiten zum Bearbeiten"
 
 #############Other#####################
 ##########################################
