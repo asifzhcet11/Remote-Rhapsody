@@ -20,10 +20,10 @@ msgid "MONPLANY_ASK_LOGIN"
 msgstr "Sie sind nicht angemeldet. Bitte zuerst über unsere Webseite anmelden und den 4 stelligen Code eingeben. Ihr Code lautet.: {code}"
 
 msgid "MONPLANY_OK_LOGIN"
-msgstr "Sie sind schon angemeldet. Was soll ich heute für Sie tun?"
+msgstr "{first_name}, Sie sind schon angemeldet. Was soll ich heute für Sie tun?"
 
 msgid "MONPLANY_LOGIN_DONE"
-msgstr "Sie sind jetzt angemeldet."
+msgstr "{first_name}, Sie sind jetzt angemeldet."
 
 msgid "MONPLANY_LOGIN_ERROR"
 msgstr "Ein Fehler ist aufgetreten. Bitte versuchen Sie es nochmal!"
@@ -32,25 +32,25 @@ msgstr "Ein Fehler ist aufgetreten. Bitte versuchen Sie es nochmal!"
 ##########################################
 
 msgid "MONPLANY_EVENT_TYPE"
-msgstr "Welche Aktivität möchten Sie dann für heute planen?"
+msgstr "Welche Aktivität möchten Sie dann planen, {first_name}?"
 
 msgid "MONPLANY_AUTOMATIC_EVENT"
-msgstr "Ihr Plan für heute wurde erstellt."
+msgstr "{first_name}, Ihr Plan wurde erstellt."
 
 msgid "MONPLANY_NO_PLAN_TODAY"
-msgstr "Ein automatischer Plan für heute ist nicht möglich. bitte erstellen Sie einen personalisierten Plan"
+msgstr "{first_name}, Ein automatischer Plan für heute ist nicht möglich. bitte erstellen Sie einen personalisierten Plan"
 
 ################HOBBIES##################
 ##########################################
 
 msgid "MONPLANY_ASK_HOBBIES"
-msgstr "Was sind Ihre Hobbies dann?"
+msgstr "{first_name}, Was sind Ihre Hobbies dann?"
 
 msgid "MONPLANY_TELL_HOBBIES"
-msgstr "Sie möchten also {hobbies} Hobbies erstellen. Die Folgenden wurden erfolgreich erfasst"
+msgstr "{first_name}, Sie möchten also {hobbies} Hobbies erstellen. Die Folgenden wurden erfolgreich erfasst"
 
 msgid "MONPLANY_EMPTY_HOBBIES"
-msgstr "Sie haben also keine Hobbies ?"
+msgstr "{first_name}, Sie haben also keine Hobbies ?"
 
 ###############SHOp##################
 ##########################################
@@ -62,31 +62,31 @@ msgstr "Ich werde für Sie ein passendes Plan für Einkaufen erstellen."
 ##########################################
 
 msgid "MONPLANY_WATER_EVENT"
-msgstr "Herrvorragend! Wasser is tsehr wichtig für den Alltag. Ich werde Sie regelmäßig dran erinnern."
+msgstr "Herrvorragend! {first_name}, Wasser is tsehr wichtig für den Alltag. Ich werde Sie regelmäßig dran erinnern."
 
 ################GYM#####################
 ##########################################
 
 msgid "MONPLANY_GYM_EVENT"
-msgstr "Wie lange möchten Sie im Fitnessstudio etwa verbrauchen?"
+msgstr "{first_name}, Wie lange möchten Sie im Fitnessstudio etwa verbrauchen?"
 
 msgid "MONPLANY_GYM_OK"
-msgstr "Ok. Ich habe für Sie einen Plan für Ihren Fitnessgym erstellt."
+msgstr "{first_name}, Ok. Ich habe für Sie einen Plan für Ihren Fitnessgym erstellt."
 
 msgid "MONPLANY_GYM_IMPOSSIBLE"
-msgstr "Für diese Dauer kann ich leider für heute Das Fitnesstraining nicht einplanen."
+msgstr "{first_name}, Für diese Dauer kann ich leider für heute Das Fitnesstraining nicht einplanen."
 
 msgid "MONPLANY_WRONG_TIME"
-msgstr "Bitte geben Sie korrekte Zeiten zum Bearbeiten"
+msgstr "{first_name}, Bitte geben Sie korrekte Zeiten zum Bearbeiten"
 
 #############Other#####################
 ##########################################
 
 msgid "MONPLANY_ACTIVITY_NOT_FOUND"
-msgstr "Tut mir Leid. Wir haben noch nicht diese Funktionalität implementiert. Bitte wählen Sie zwischen Hobbies, Einkaufen, Wasser Erinnerung oder Gym Aktivitäten."
+msgstr "{first_name}, Tut mir Leid. Wir haben noch nicht diese Funktionalität implementiert. Bitte wählen Sie zwischen Hobbies, Einkaufen, Wasser Erinnerung oder Gym Aktivitäten."
 
 msgid "MONPLANY_FINAl_MSG"
-msgstr " Melden Sie sich wenn Sie etwas brauchen! Schönen Tag noch."
+msgstr "Melden Sie sich wenn Sie etwas brauchen! Schönen Tag noch."
 
 ##########################################
 ##########################################

@@ -3,10 +3,12 @@ from skill_sdk.l10n import _
 from typing import List
 from external.database_api import UserDatabase
 from external.activity_api.activity import Activity, ActivityType, ActivityManager
+from external.monplany_manager import MonplanyManager
 import re
 
-activity_manager = ActivityManager()
-user_database = UserDatabase()
+monplany_manager = MonplanyManager(credentials_dir='./external/credentials/')
+user_database = monplany_manager.user_database
+
 available_events = ["einkaufen", "fitness", "gym", "wasser", "hobby", "kaufe", "sport"]
 event_map_activity = {
     "einkaufen": {
@@ -53,28 +55,25 @@ def ask_login(user_id:str, phone:str) -> Response:
     if not user_database.is_user_synced(user_id):
         response = generate_code_response(user_id)
     else:
-        response = ask(_('MONPLANY_EVENT_TYPE'))
+        response = ask(_('MONPLANY_EVENT_TYPE', first_name=user_database.get_user_first_name(user_id)))
     return response
 
 @skill.intent_handler('TEAM_21_CREATE_AUTOMATIC_EVENT')
 def automatic_event(user_id:str) -> Response:
 
     if user_database.is_user_synced(user_id):
-        # if user_database.
-    #     if plan_today():
-        msg = _('MONPLANY_AUTOMATIC_EVENT') + _('MONPLANY_FINAl_MSG')
-    #     else:
-    #       msg = _('MONPLANY_NO_PLAN_TODAY')
+        for activity_type, activity in monplany_manager.available_activities.items():
+            monplany_manager.add_activity_to_calendar(activity, user_id)
+        msg = _('MONPLANY_AUTOMATIC_EVENT', first_name=user_database.get_user_first_name(user_id)) + _('MONPLANY_FINAl_MSG')
     else:
         msg = generate_code_response(user_id)
     return tell(msg)
-    pass
 
 
 @skill.intent_handler('TEAM_21_ASK_HOBBIES')
 def ask_hobbies(user_id:str) -> Response:
     if user_database.is_user_synced(user_id):
-        response = ask(_('MONPLANY_ASK_HOBBIES'))
+        response = ask(_('MONPLANY_ASK_HOBBIES', first_name=user_database.get_user_first_name(user_id)))
     else:
         response = generate_code_response(user_id)
     return response
@@ -88,7 +87,7 @@ def plan_hobbies(user_id:str, hobbies: str) -> Response:
         print(hobbies)
         try:
             assert len(hobbies) > 0
-            msg = _('MONPLANY_TELL_HOBBIES', hobbies=len(hobbies))
+            msg = _('MONPLANY_TELL_HOBBIES ', first_name=user_database.get_user_first_name(user_id), hobbies=len(hobbies))
             msg += ':'
             for id, str in enumerate(hobbies):
                 if id == 0:
@@ -116,20 +115,10 @@ def plan_event(user_id:str, activity: str) -> Response:
         lowercase = activity.lower()
         if lowercase in available_events:
             type = event_map_activity[lowercase]["type"]
-            if type == ActivityType.GYM:
-                response = ask(_(event_map_activity[lowercase]["response"]))
-            else:
-                response = tell(_(event_map_activity[lowercase]["response"]) + _("MONPLANY_FINAl_MSG"))
-            user_activity = activity_manager.create_activity(type)
-            # if event.lower() == "einkaufen":
-            #     response = tell()
-            #     user_database.update_calendar_events_by_magenta_id(user_id, )
-            #     # send_event("Einkaufen")
-            # elif event.lower() == "wasser":
-            #     response = tell("MONPLANY_WATER_REMINDER" + _("MONPLANY_FINAl_MSG"))
-            #     # send_event("Gesundheit")
-            # else:
-            #     response = ask("MONPLANY_GYM_REMINDER")
+            user_activity = monplany_manager.create_activity(type)
+            monplany_manager.add_activity_to_calendar(user_activity, user_id)
+            response = tell(_(event_map_activity[lowercase]["response"]))
+            
         else:
             response = ask("MONPLANY_ACTIVITY_NOT_FOUND")
     else:
@@ -145,7 +134,7 @@ def gym_event(user_id:str, hours:int, minutes:int) -> Response:
             assert hours > 0 or minutes > 0
             assert hours >= 0 and minutes > 0
             # if send_event("gym", gym_stunden, gym_minutes):
-            response = tell(_("MONPLANY_GYM_OK") + _("MONPLANY_FINAl_MSG"))
+            response = tell(_("MONPLANY_GYM_OK", first_name=user_database.get_user_first_name(user_id)) + _("MONPLANY_FINAl_MSG"))
             # else:
             #   response = tell(_("MONPLANY_GYM_IMPOSSIBLE"))
         else:
