@@ -1,4 +1,4 @@
-# Welcome to StackEdit!
+# MonPlany
 MonPlany is skill that plans everything you want for you without needing to ask about time.
 
 ## Videos:
