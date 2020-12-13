@@ -1,5 +1,6 @@
 import pymongo
-from external.magenta_synchronization import MagentaSyncronization
+from external.device_sync.magenta_synchronizer import MagentaSyncronizer
+from datetime import datetime
 
 class UserDatabase:
     DATABASE_URL = "mongodb://localhost:27017/"
@@ -8,7 +9,7 @@ class UserDatabase:
     MAGENTA_COLLECTION = "magenta_info"
 
     def __init__(self):
-        self.magenta_synchronizer = MagentaSyncronization()
+        self.magenta_synchronizer = MagentaSyncronizer()
         self.db_client = pymongo.MongoClient(UserDatabase.DATABASE_URL)
         self.db = self.db_client[UserDatabase.DATABASE]
         self.user_collection = self.db[UserDatabase.COLLECTION]
@@ -34,7 +35,7 @@ class UserDatabase:
             self.magenta_info_collection.insert_one({"sync_code": sync_code, "magenta_id": magenta_id})
             return sync_code
 
-    def insert_user_info(self, email: str, first_name: str, last_name: str, events: [], google_auth_code: str, sync_code: int):
+    def insert_user_info(self, email: str, first_name: str, last_name: str, events: [], sync_code: int):
         query = {"sync_code": sync_code}
         res = self.magenta_info_collection.find_one(query)
         print(res)
@@ -47,27 +48,52 @@ class UserDatabase:
                 "events": events,
                 "magenta_info": res,
                 "magenta_id": res["magenta_id"],
-                "google_auth_code": google_auth_code
             }
             self.user_collection.insert_one(data)
             return "Your magenta device is synced"
         else:
             return "Some issue with the sync code. It cannot be synced. Please try again"
 
-    def get_calendar_events(self, email: str):
+    def get_calendar_events_by_magenta_id(self, magenta_id: str):
+        query = {"magenta_id": magenta_id}
+        res = self.user_collection.find_one(query)
+        return res["events"]
+
+    def get_calendar_events_by_email(self, email: str):
         query = {"email": email}
         res = self.user_collection.find_one(query)
         return res["events"]
 
-    def update_calendar_events_by_email(self, email: str, events: []):
+    def update_calendar_events_by_email(self, email: str, event: dict):
         query = {"email": email}
-        new_events = {"$set": {"events": events}}
+        # get stored events from database of specific id
+        stored_events = self.user_collection.find_one(query)["events"]
+        # append to the stored one
+        stored_events.append(event)
+        # remove duplicate events
+        unique_events = [dict(t) for t in {tuple(d.items()) for d in stored_events}]
+        new_events = {"$set": {"events": unique_events}}
         self.user_collection.update_one(query, new_events)
 
-    def update_calendar_events_by_magenta_id(self, magenta_id: str, events: []):
+    def reset_calendar_events(self, email:str=None, magenta_id:str=None):
+        if email:
+            query = {"email": email}
+        elif magenta_id:
+            query = {"magenta_id": magenta_id}
+        empty_events = {"$set": {"events": []}}
+        self.user_collection.update_one(query, empty_events)
+
+    def update_calendar_events_by_magenta_id(self, magenta_id: str, event: dict):
         query = {"magenta_id": magenta_id}
-        new_events = {"$set": {"events": events}}
+        # get stored events from database of specific id
+        stored_events = self.user_collection.find_one(query)["events"]
+        # append to the stored one
+        stored_events.append(event)
+        # remove duplicate events
+        unique_events = [dict(t) for t in {tuple(d.items()) for d in stored_events}]
+        new_events = {"$set": {"events": unique_events}}
         self.user_collection.update_one(query, new_events)
+        #self.print_collection(self.user_collection)
 
     def is_user_synced(self, magenta_id: str) -> bool:
         query = {"magenta_id": magenta_id}
@@ -77,9 +103,25 @@ class UserDatabase:
         else:
             return False
 
+    def get_email_from_id(self, magenta_id: str):
+        query = {"magenta_id": magenta_id}
+        res = self.user_collection.find_one(query)
+        return res["email"]
+
+    def get_id_from_email(self, email: str):
+        query = {"email": email}
+        res = self.user_collection.find_one(query)
+        return res["magenta_id"]
+
     def print_collection(self, collection):
         for col in collection.find():
             print(col)
+
+
+    def get_user_first_name(self, magenta_id: str) -> str:
+        query = {"magenta_id": magenta_id}
+        res = self.user_collection.find_one(query)
+        return res["first_name"]
 
 
 ###############
