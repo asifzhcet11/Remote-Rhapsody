@@ -35,7 +35,7 @@ msgid "MONPLANY_EVENT_TYPE"
 msgstr "Welche Aktivität möchten Sie dann planen, {first_name}?"
 
 msgid "MONPLANY_AUTOMATIC_EVENT"
-msgstr "Ihr Plan wurde erstellt."
+msgstr "Ihr Plan wurde erstellt, {first_name}."
 
 msgid "MONPLANY_NO_PLAN_TODAY"
 msgstr "{first_name}, Ein automatischer Plan für heute ist nicht möglich. bitte erstellen Sie einen personalisierten Plan"
