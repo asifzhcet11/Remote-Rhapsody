@@ -2,8 +2,7 @@
 MonPlany is skill that plans everything you want for you without needing to ask about time.
 
 ## Videos:
-[Plan a specific activity]()
-[Plan automatically]()
+[Monplany](https://youtu.be/dcBiMdv0mzw)
 
 ## Requirements:
 
